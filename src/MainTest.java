@@ -23,4 +23,10 @@ public class MainTest {
         mainClass.write(" And the appended statement");
         assertEquals("Test Statement And the appended statement", mainClass.journal);
     }
+
+    @Test
+    public void degradationDuringWritingTest() throws IOException {
+        mainClass.write("15 non spaces long");
+        assertEquals(85, mainClass.ptDurability);
+    }
 }
