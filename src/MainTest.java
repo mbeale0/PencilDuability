@@ -27,6 +27,7 @@ public class MainTest {
     @Test
     public void degradationDuringWritingTest() throws IOException {
         mainClass.write("15 non spaces long");
-        assertEquals(85, mainClass.ptDurability);
+        assertEquals(35, mainClass.ptDurability);
     }
+    
 }

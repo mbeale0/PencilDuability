@@ -1,6 +1,6 @@
 public class Main {
     public String journal = "";
-    public int ptDurability = 100;
+    public int ptDurability = 50;
 
     public static void main(String[] args) {
 
