@@ -29,5 +29,11 @@ public class MainTest {
         mainClass.write("15 non spaces long");
         assertEquals(35, mainClass.ptDurability);
     }
-    
+
+    @Test
+    public void stopWritingAfterDegradationTest() throws IOException {
+        mainClass.write("Boy I sure do love my new pencil, I really hope it lasts forever");
+
+        assertEquals("Boy I sure do love my new pencil, I really hope it lasts foreve ", mainClass.journal);
+    }
 }
