@@ -41,6 +41,6 @@ public class MainTest {
     public void stopWritingAfterDegradationTest() throws IOException {
         mainClass.write("Boy I sure do love my new pencil, I really hope it lasts forever");
 
-        assertEquals("Boy I sure do love my new pencil, I really hope it lasts foreve ", mainClass.journal);
+        assertEquals("Boy I sure do love my new pencil, I really hope it lasts for    ", mainClass.journal);
     }
 }
