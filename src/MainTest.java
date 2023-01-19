@@ -9,6 +9,7 @@ public class MainTest {
     @Before
     public void setUp() throws Exception {
         mainClass = new Main();
+        mainClass.ptDurability = 50;
     }
 
     @Test
@@ -28,6 +29,12 @@ public class MainTest {
     public void degradationDuringWritingTest() throws IOException {
         mainClass.write("15 non spaces long");
         assertEquals(35, mainClass.ptDurability);
+    }
+
+    @Test
+    public void lettersCaseDegradesProperlyTest() throws IOException {
+        mainClass.write("CapItalS!");
+        assertEquals(38, mainClass.ptDurability);
     }
 
     @Test
