@@ -32,9 +32,9 @@ public class MainTest {
     }
 
     @Test
-    public void lettersCaseDegradesProperlyTest() throws IOException {
-        mainClass.write("CapItalS!");
-        assertEquals(38, mainClass.ptDurability);
+    public void uppercaseLettersDegradesProperlyTest() throws IOException {
+        mainClass.write("CAPITAL");
+        assertEquals(36, mainClass.ptDurability);
     }
 
     @Test
