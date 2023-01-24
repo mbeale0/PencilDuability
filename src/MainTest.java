@@ -38,6 +38,12 @@ public class MainTest {
     }
 
     @Test
+    public void lowercaseLettersDegradesProperlyTest() throws IOException {
+        mainClass.write("lower!?");
+        assertEquals(43, mainClass.ptDurability);
+    }
+
+    @Test
     public void stopWritingAfterDegradationTest() throws IOException {
         mainClass.write("Boy I sure do love my new pencil, I really hope it lasts forever");
 
