@@ -53,4 +53,10 @@ public class MainTest {
         pencil.write("                  ");
         assertEquals(50, pencil.getPtDurability());
     }
+
+    @Test
+    public void newLinesDoNotChangeDegradation() throws IOException {
+        pencil.write("hello...\ngoodbye...");
+        assertEquals(32, pencil.getPtDurability());
+    }
 }
