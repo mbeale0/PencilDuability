@@ -1,12 +1,15 @@
 public class Pencil {
     private String journal = "";
     private int ptDurability = 0;
+    private final int startingDurability;
 
     public Pencil(int ptDurability) {
         this.ptDurability = ptDurability;
+        this.startingDurability = this.ptDurability;
     }
 
     public String getJournal() {
+
         return journal;
     }
 
@@ -22,6 +25,10 @@ public class Pencil {
         }
         String result = new String(actual_line);
         journal += result;
+    }
+
+    public void sharpen(){
+        ptDurability = startingDurability;
     }
 
     private void insertInArray(String input, char[] actual_line, int i) {
