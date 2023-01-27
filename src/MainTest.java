@@ -45,7 +45,12 @@ public class MainTest {
     @Test
     public void stopWritingAfterDegradationTest() throws IOException {
         pencil.write("Boy I sure do love my new pencil, I really hope it lasts forever");
-
         assertEquals("Boy I sure do love my new pencil, I really hope it lasts for    ", pencil.getJournal());
+    }
+
+    @Test
+    public void spacesDoNotChangeDegradation() throws IOException {
+        pencil.write("                  ");
+        assertEquals(50, pencil.getPtDurability());
     }
 }
