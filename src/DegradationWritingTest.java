@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MainTest {
+public class DegradationWritingTest {
     private Pencil pencil;
     @Before
     public void setUp() throws Exception {
