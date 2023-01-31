@@ -39,6 +39,16 @@ public class Pencil {
         }
     }
 
+    public void erase(String stringToErase){
+        int stringIndex = journal.lastIndexOf(stringToErase);
+        char[] journalMutArray = journal.toCharArray();
+        for(int i = stringIndex; i < stringToErase.length() + stringIndex; i++){
+            journalMutArray[i] = ' ';
+        }
+        String result = new String(journalMutArray);
+        journal = result;
+    }
+
     private void insertInArray(String input, char[] actual_line, int i) {
         if(ptDurability > 0){
             actual_line[i] = input.charAt(i);
