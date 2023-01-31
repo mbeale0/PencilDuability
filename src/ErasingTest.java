@@ -18,5 +18,12 @@ public class ErasingTest {
         pencil.erase("thgy");
         assertEquals("I need      to erase wrong words!", pencil.getJournal());
     }
-
+    
+    @Test
+    public void replacingSameWordTwiceWithSpacesTest() throws IOException {
+        pencil.write("I need thgy to erase thgy wrong words!");
+        pencil.erase("thgy");
+        pencil.erase("thgy");
+        assertEquals("I need      to erase      wrong words!", pencil.getJournal());
+    }
 }
