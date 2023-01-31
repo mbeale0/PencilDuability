@@ -33,8 +33,10 @@ public class Pencil {
     }
 
     public void sharpen(){
-        ptDurability = startingDurability;
-        length--;
+        if(length > 0){
+            ptDurability = startingDurability;
+            length--;
+        }
     }
 
     private void insertInArray(String input, char[] actual_line, int i) {

@@ -25,4 +25,17 @@ public class SharpeningTest {
         pencil.sharpen();
         assertEquals(9, pencil.getLength());
     }
+    @Test
+    public void stopSharpeningAfterZeroLengthTest() throws IOException {
+        int i = 0;
+        while(i < 10){
+            pencil.sharpen();
+            i++;
+        }
+        pencil.write("minus 19 pt durability");
+        pencil.sharpen();
+        assertEquals(981, pencil.getPtDurability());
+    }
+
 }
+
