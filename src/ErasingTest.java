@@ -13,17 +13,26 @@ public class ErasingTest {
     }
 
     @Test
-    public void replacingWordWithSpacesTest() throws IOException {
+    public void erasingWordTest() throws IOException {
         pencil.write("I need thgy to erase wrong words!");
         pencil.erase("thgy");
         assertEquals("I need      to erase wrong words!", pencil.getJournal());
     }
-    
+
     @Test
-    public void replacingSameWordTwiceWithSpacesTest() throws IOException {
+    public void erasingSameWordTwiceTest() throws IOException {
         pencil.write("I need thgy to erase thgy wrong words!");
         pencil.erase("thgy");
         pencil.erase("thgy");
         assertEquals("I need      to erase      wrong words!", pencil.getJournal());
+    }
+
+
+    @Test
+    public void erasingDiffWordsTwiceTest() throws IOException {
+        pencil.write("I need thgy to erase chicken wrong words!");
+        pencil.erase("thgy");
+        pencil.erase("chicken");
+        assertEquals("I need      to erase         wrong words!", pencil.getJournal());
     }
 }
