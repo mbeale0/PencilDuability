@@ -8,7 +8,7 @@ public class DegradationWritingTest {
     private Pencil pencil;
     @Before
     public void setUp() throws Exception {
-        pencil = new Pencil(50);
+        pencil = new Pencil(50, 10);
     }
 
     @Test
