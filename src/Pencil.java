@@ -51,7 +51,7 @@ public class Pencil {
         }
         int stringIndex = journal.lastIndexOf(stringToErase);
         char[] journalMutArray = journal.toCharArray();
-        for(int i = stringIndex; i < stringToErase.length() + stringIndex; i++){
+        for(int i = stringToErase.length() + stringIndex - 1; i >= stringIndex ; i--){
             if(eraserDurability == 0){
                 break;
             }

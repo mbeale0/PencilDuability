@@ -22,7 +22,7 @@ public class ErasingDegradationTest {
     public void eraserStopsErasingTest() throws IOException {
         pencil.write("Hello my name is Joe");
         pencil.erase("Hello my name is Joe");
-        assertEquals("          ame is Joe", pencil.getJournal());
+        assertEquals("Hello my n          ", pencil.getJournal());
     }
 
 }
