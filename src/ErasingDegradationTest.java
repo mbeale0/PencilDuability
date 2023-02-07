@@ -18,4 +18,11 @@ public class ErasingDegradationTest {
         assertEquals(5, pencil.getEraserDurability());
     }
 
+    @Test
+    public void eraserStopsErasingTest() throws IOException {
+        pencil.write("Hello my name is Joe");
+        pencil.erase("Hello my name is Joe");
+        assertEquals("          ame is Joe", pencil.getJournal());
+    }
+
 }

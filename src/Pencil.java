@@ -46,12 +46,19 @@ public class Pencil {
     }
 
     public void erase(String stringToErase){
+        if(eraserDurability == 0){
+            return;
+        }
         int stringIndex = journal.lastIndexOf(stringToErase);
         char[] journalMutArray = journal.toCharArray();
         for(int i = stringIndex; i < stringToErase.length() + stringIndex; i++){
+            if(eraserDurability == 0){
+                break;
+            }
             journalMutArray[i] = ' ';
+            eraserDurability -= 1;
         }
-        eraserDurability -= stringToErase.length();
+
         String result = new String(journalMutArray);
         journal = result;
     }
