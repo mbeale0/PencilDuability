@@ -9,7 +9,7 @@ public class SharpeningTest {
     private Pencil pencil;
     @Before
     public void setUp() throws Exception {
-        pencil = new Pencil(1000, 10);
+        pencil = new Pencil(1000, 10, 10);
     }
 
     @Test

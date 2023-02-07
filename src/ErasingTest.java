@@ -9,7 +9,7 @@ public class ErasingTest {
     private Pencil pencil;
     @Before
     public void setUp() throws IOException {
-        pencil = new Pencil(1000, 10);
+        pencil = new Pencil(1000, 10, 10);
     }
 
     @Test

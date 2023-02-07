@@ -3,11 +3,13 @@ public class Pencil {
     private int ptDurability = 0;
     private int length = 0;
     private final int startingDurability;
+    private int eraserDurability = 0;
 
-    public Pencil(int ptDurability, int length) {
+    public Pencil(int ptDurability, int length, int eraserDurability) {
         this.ptDurability = ptDurability;
         this.length = length;
         this.startingDurability = this.ptDurability;
+        this.eraserDurability = eraserDurability;
     }
 
     public String getJournal() {
@@ -20,6 +22,10 @@ public class Pencil {
 
     public int getPtDurability() {
         return ptDurability;
+    }
+
+    public int getEraserDurability() {
+        return eraserDurability;
     }
 
     public void write(String input){
@@ -45,6 +51,7 @@ public class Pencil {
         for(int i = stringIndex; i < stringToErase.length() + stringIndex; i++){
             journalMutArray[i] = ' ';
         }
+        eraserDurability -= stringToErase.length();
         String result = new String(journalMutArray);
         journal = result;
     }
