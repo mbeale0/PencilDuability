@@ -19,10 +19,17 @@ public class ErasingDegradationTest {
     }
 
     @Test
-    public void eraserStopsErasingTest() throws IOException {
+    public void eraserStopsErasingInMiddleTest() throws IOException {
         pencil.write("Hello my name is Joe");
         pencil.erase("Hello my name is Joe");
         assertEquals("Hello my n          ", pencil.getJournal());
     }
 
+    @Test
+    public void eraserCantEraseAgainTest() throws IOException {
+        pencil.write("Okay that is a very good thing to know");
+        pencil.erase("very good th");
+        pencil.erase("ing");
+        assertEquals("Okay that is a             ing to know", pencil.getJournal());
+    }
 }

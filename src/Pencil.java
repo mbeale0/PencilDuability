@@ -55,8 +55,12 @@ public class Pencil {
             if(eraserDurability == 0){
                 break;
             }
+            if(journalMutArray[i] != ' '){
+                eraserDurability -= 1;
+            }
             journalMutArray[i] = ' ';
-            eraserDurability -= 1;
+
+
         }
 
         String result = new String(journalMutArray);
