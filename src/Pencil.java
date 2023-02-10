@@ -67,6 +67,28 @@ public class Pencil {
         journal = result;
     }
 
+    public void edit(String newString, int eraserSection){
+        int currEraserSection = 0;
+        int startingIndex = -1;
+        char[] journalMutArray = journal.toCharArray();
+        for(int i = 1; i < journal.length(); i++){
+            if(journal.charAt(i) == ' ' && journal.charAt(i - 1) == ' '){
+                currEraserSection++;
+            }
+            if(currEraserSection == eraserSection){
+                startingIndex = i;
+            }
+        }
+        int newStringIndex = 0;
+        for(int i = startingIndex; i < newString.length() + startingIndex; i++){
+            journalMutArray[i] = newString.charAt(newStringIndex);
+            newStringIndex++;
+        }
+
+        String result = new String(journalMutArray);
+        journal = result;
+    }
+
     private void insertInArray(String input, char[] actual_line, int i) {
         if(ptDurability > 0){
             actual_line[i] = input.charAt(i);
