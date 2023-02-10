@@ -59,8 +59,6 @@ public class Pencil {
                 eraserDurability -= 1;
             }
             journalMutArray[i] = ' ';
-
-
         }
 
         String result = new String(journalMutArray);
@@ -71,22 +69,33 @@ public class Pencil {
         int currEraserSection = 0;
         int startingIndex = -1;
         char[] journalMutArray = journal.toCharArray();
-        for(int i = 1; i < journal.length(); i++){
-            if(journal.charAt(i) == ' ' && journal.charAt(i - 1) == ' '){
-                currEraserSection++;
-            }
-            if(currEraserSection == eraserSection){
-                startingIndex = i;
-            }
-        }
-        int newStringIndex = 0;
-        for(int i = startingIndex; i < newString.length() + startingIndex; i++){
-            journalMutArray[i] = newString.charAt(newStringIndex);
-            newStringIndex++;
-        }
+        int i = 1;
+        startingIndex = getEditingStartIndex(eraserSection, currEraserSection, startingIndex, i);
+        insertEdit(newString, startingIndex, journalMutArray);
 
         String result = new String(journalMutArray);
         journal = result;
+    }
+
+    private static void insertEdit(String newString, int startingIndex, char[] journalMutArray) {
+        int newStringIndex = 0;
+        if(startingIndex > -1){
+            for(int j = startingIndex; j < newString.length() + startingIndex; j++){
+                journalMutArray[j] = newString.charAt(newStringIndex);
+                newStringIndex++;
+            }
+        }
+    }
+
+    private int getEditingStartIndex(int eraserSection, int currEraserSection, int startingIndex, int i) {
+        while (currEraserSection != eraserSection && i < journal.length()){
+            if(journal.charAt(i) == ' ' && journal.charAt(i - 1) == ' '){
+                currEraserSection++;
+                startingIndex = i;
+            }
+            i++;
+        }
+        return startingIndex;
     }
 
     private void insertInArray(String input, char[] actual_line, int i) {
