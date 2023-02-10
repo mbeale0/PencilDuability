@@ -81,7 +81,12 @@ public class Pencil {
         int newStringIndex = 0;
         if(startingIndex > -1){
             for(int j = startingIndex; j < newString.length() + startingIndex; j++){
-                journalMutArray[j] = newString.charAt(newStringIndex);
+                if(journalMutArray[j] == ' '){
+                    journalMutArray[j] = newString.charAt(newStringIndex);
+                }
+                else{
+                    journalMutArray[j] = '@';
+                }
                 newStringIndex++;
             }
         }

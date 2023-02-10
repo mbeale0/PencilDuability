@@ -20,5 +20,13 @@ public class EditingTest {
         assertEquals("I am a senior in college", pencil.getJournal());
     }
 
+    
 
+    @Test
+    public void collisionTest() throws IOException {
+        pencil.write("Bacon is the most best thing ever");
+        pencil.erase("best");
+        pencil.edit("awesome", 1);
+        assertEquals("Bacon is the most aweso@@ing ever", pencil.getJournal());
+    }
 }
