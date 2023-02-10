@@ -30,6 +30,13 @@ public class EditingTest {
     }
 
     @Test
+    public void noEditingIfNoSpacesTest() throws IOException {
+        pencil.write("Please, I don't wanna change!!");
+        pencil.edit("Sorry!", 1);
+        assertEquals("Please, I don't wanna change!!", pencil.getJournal());
+    }
+
+    @Test
     public void collisionTest() throws IOException {
         pencil.write("Bacon is the most best thing ever");
         pencil.erase("best");
