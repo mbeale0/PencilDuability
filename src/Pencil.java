@@ -93,10 +93,15 @@ public class Pencil {
     }
 
     private int getEditingStartIndex(int eraserSection, int currEraserSection, int startingIndex, int i) {
+        boolean havePassedWord = true;
         while (currEraserSection != eraserSection && i < journal.length()){
-            if(journal.charAt(i) == ' ' && journal.charAt(i - 1) == ' '){
+            if(Character.isAlphabetic(journal.charAt(i))){
+                havePassedWord = true;
+            }
+            if(havePassedWord && journal.charAt(i) == ' ' && journal.charAt(i - 1) == ' '){
                 currEraserSection++;
                 startingIndex = i;
+                havePassedWord = false;
             }
             i++;
         }

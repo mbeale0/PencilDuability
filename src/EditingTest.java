@@ -20,7 +20,14 @@ public class EditingTest {
         assertEquals("I am a senior in college", pencil.getJournal());
     }
 
-    
+    @Test
+    public void editsCorrectSpotTest() throws IOException {
+        pencil.write("Good day to you sir!");
+        pencil.erase("to");
+        pencil.erase("sir");
+        pencil.edit("man", 2);
+        assertEquals("Good day    you man!", pencil.getJournal());
+    }
 
     @Test
     public void collisionTest() throws IOException {
